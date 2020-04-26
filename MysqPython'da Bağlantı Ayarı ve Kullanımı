@@ -1,0 +1,14 @@
+import pymysql.cursors
+
+veritabani=pymysql.connect(user='root',password='####',host='localhost',database='####')
+veri=veritabani.cursor()
+
+#tabloya bağlanma 
+veri.execute("SELECT * FROM tablo_adi")
+gelen=veri.fetchall()
+
+for i in gelen:
+  print(i)               #veritabanından gelen bütün bilgiler tek tek ekrana yazdırılır.
+  
+  
+veri.close()

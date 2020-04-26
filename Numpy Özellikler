@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 26 13:41:52 2020
+
+@author: User
+"""
+
+import numpy as np
+
+array=np.array([[1,2,3,4,5,6,7,8,9]])  #array i oluşturduk.
+
+array2=np.array([[1,2,3,4,5,6,7,8,9]])  #array i oluşturduk.
+
+print("boyut: ",array.ndim) #boyut
+
+print("data type: ",array.dtype.name)   #listedeki elemanların tipi
+
+print("size: ",array.size)  #a nın boyutu
+
+print("type: ",type(array))  #a nın tipi
+
+print(array.shape)  #arrayın tipini döner.
+
+print(array.reshape(3,3)) #arrayın tipini değiştirir. 3 e 3 lük bir matris  yapar.
+
+print(array+array2)
+
+print(array*array2)  #indis indis çarpımı
+
+print(array.T) #arrayın transpozesi
+
+print(np.dot(array,array2.T)) #matris çarpımı
+
+print(np.square(array))  #kare alma
+
+print(np.sqrt(array))  #arrayın karekökü
+
+print(np.sin(array)) #arrayın sinüs değerleri
+
+print(array.sum()) #elemanların toplamı
+
+print(array.max())  #en büyük eleman
+
+print(array.min()) #en küçük eleman
+
+print("array dizisindeki elemaanların sütun sütun toplami: ",array.sum(axis=0))
+
+print("array dizisindeki elemaanların satır satır toplami: ",array.sum(axis=1))
+
+print(array[0:2]) #list1 deki O dan 1 kadarki elemanları yaz.
+
+print(array[::-1])  #diziyi ters çevirir
+
+array=np.array([[1,2,3,4,5],[6,7,8,9,10]])  # 2*5 lik bir matris.
+
+print(array[1][4])  #1.satır 4.sütun
+
+print(array[1][1:4]) #1 satır daki 1 den 4 kadarki sütunları getir.
+
+print(array[-1][:]) #son satırdaki bütün sütunları getir.
+
+print(np.zeros((5,5))) # 5 e 5 lik 0 lardan oluşan bir matris
+
+print(np.ones((5,5)))  # 5 e 5 lik 1 lerden oluşan bir matris
+
+print(np.random.random((5,5)))  #0-1 arasında 5 e 5lik rastgele bir  diiz oluşturur.
+
+bos=np.empty((3,4))   #3-4 lük boş bir liste yaratır.
+
+list=np.arange(10,501,10)  #10 dan başla 500e kadar 10 10 artan bir dizi oluştur.
+print(list,"\n")
+
+
+list2=np.linspace(1,1500,15)  # 1-1500 arasında 15 tane elemanlı bir dizi oluştur.
+for i in list2:
+    print(int(i))
+    
+print(array.ravel())  #matrisin tek bir satır şekline düzeltilmiş hali
+
+array3=np.vstack((array,array2))   #dikey birleştirir.(vertical)
+print(array3,"\n")
+
+array3=np.hstack((array,array2))  #yatay birleştirir.(horizontal
+print(array3,"\n")
+
+liste=[1,2,3,4]
+
+array=np.array(liste)  #lsiteyi array a çevirdik.
+
+liste2=list(array)  #arrayı listeye çevirdik.
+
+a=np.array([1,2,3,4,5])
+
+b=a.copy()  #a nın aynısını b ye ekle demek.
+
+print(b)
+
+
+

@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 26 13:14:28 2020
+
+@author: User
+"""
+
+import pandas as pd
+
+
+dict={"name":["ali","veli","mehmet"],"age":[18,14,25],"salary":[1000,2000,3000]}
+
+data=pd.DataFrame(dict) #yaratılan sözlük veri tablosuna dönüştürüldü.
+
+print(data.info())  #sütun özellikleri
+
+print(data.columns)  #sütun isimleri getirilir.
+
+print(data.describe())  #integer sütunlarla ilgili  belli başlı özellikler gelir.
+
+print(data.name)  #sadece name sütunundaki veriler getirilir.
+
+print(data.dtypes) #sütunların veritipleri
+
+print(data.loc[1:,"salary"])  #id si 1 den sonraki bütün kişilerin maaşlarını getir.
+
+print(data.loc[2,["name","age"]])  #id si 2 olanın adını ve yaşını getir.
+
+print(data.loc[::-1,"salary"]) #tabloyu ter çevirip maaşları getir.
+
+print(data.head(1))  #baştan bir örnek getir.
+
+print(data.tail(1))  #sondan bir örnek getir.
+
+data.rename(columns={"name": 'isim'},inplace=True)  #name sütununun adını isim yap.
+
+data.rename(columns={"age": "yas"},inplace=True)  #age sütununu yas yap
+
+data.rename(columns={"salary": "maas"},inplace=True)  #salary sütunun maas yap
+
+#filtreleme
+
+filtre1=data.maas>1000
+
+print(data[filtre1])  #maaşı 1000 den büyük olanları getir.
+
+print(data[filtre1].isim)  #maası 1000 den büyük olanların ismini  getir.
+
+filtre2=data.yas>18
+
+print(data[filtre1 & filtre2].isim)  #her iki filtreye de uyan kişinin ismini getir.
+
+data2=data
+
+dikey_birleştir=pd.concat([data,data2],axis=0)  #iki tabloyu alt alta birleştir. (axisi=0 dikey demek)
+print(dikey_birleştir)
+
+yatay_birleştir=pd.concat([data.isim,data2.yas],axis=1)  #data1 deki isim sütunu ile data2 deki yaş sütununu yanyana birleştir.(axis=! yatay demek)
+print(yatay_birleştir)
+
+
+data["maasa zam"]=[i+1000 for i in data.maas]  #maasa zam diye bir sütun ekle ve içine her maasın 1000 fazlasını at.
+print(data)
+
+
+
+
+
+
+
+
+

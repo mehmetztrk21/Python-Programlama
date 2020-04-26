@@ -1,0 +1,9 @@
+def recusive(dizi):
+    if(len(dizi)==0):
+        return 0
+    else:
+        return dizi[0]+recusive(dizi[1:])  #dizi 0 ile dizinin geride kalan elemanlarını topla.
+
+
+liste=[1,2,3,4]
+print(recusive(liste))
